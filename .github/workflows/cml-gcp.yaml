@@ -23,6 +23,8 @@ jobs:
 
       - name: create runner
         uses: related-sciences/gce-github-runner@v0.4
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
 
 
   core:
