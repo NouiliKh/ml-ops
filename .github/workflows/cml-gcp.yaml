@@ -38,15 +38,15 @@ jobs:
           make test
 
 
-    stop-instance:
-      needs:
-        - start-instance
-        - core
-      runs-on: ubuntu-latest
-      if: ${{ always() }}
+  stop-instance:
+    needs:
+      - start-instance
+      - core
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
 
-      steps:
-        - name: stop runner
-        - uses: related-sciences/gce-github-runner@v0.4
-          with:
-           command: stop
+    steps:
+      - name: stop runner
+      - uses: related-sciences/gce-github-runner@v0.4
+        with:
+         command: stop
