@@ -22,9 +22,7 @@ jobs:
           credentials_json: '${{ secrets.GCE_SA_KEY }}'
 
       - name: create runner
-        uses: related-sciences/gce-github-runner@v0.4
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
+        uses: 'google-github-actions/deploy-cloudrun@v1'
 
 
   core:
