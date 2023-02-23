@@ -11,10 +11,13 @@ jobs:
     outputs:
       label: ${{ steps.create-runner.outputs.label }}
     steps:
-      - name: create runner
-        uses: related-sciences/gce-github-runner@v0.4
+      - name: authenticate
+        uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: create runner
+        uses: related-sciences/gce-github-runner@v0.4
 
 
   core:
