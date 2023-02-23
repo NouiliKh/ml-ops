@@ -22,6 +22,7 @@ jobs:
     runs-on: ${{ needs.start-instance.outputs.label }}
     steps:
       - uses: actions/checkout@v3
+
       - name: set up environment
         uses: actions/setup-python@v4
 
@@ -47,6 +48,6 @@ jobs:
 
     steps:
       - name: stop runner
-      - uses: related-sciences/gce-github-runner@v0.4
+        uses: related-sciences/gce-github-runner@v0.4
         with:
          command: stop
