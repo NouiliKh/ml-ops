@@ -22,7 +22,12 @@ jobs:
           credentials_json: '${{ secrets.GCE_SA_KEY }}'
 
       - name: create runner
-        uses: 'google-github-actions/deploy-cloudrun@v1'
+        uses: 'google-github-actions/ssh-compute@v0'
+        with:
+          instance_name: ${{ secrets.GCE_INSTANCE }}
+          zone: ${{ secrets.GCE_INSTANCE }}
+          ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+          command: 'echo Hello world'
 
 
   core:
