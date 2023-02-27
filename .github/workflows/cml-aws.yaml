@@ -26,6 +26,9 @@ jobs:
           mode: start
           github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           ec2-image-id: ${{ secrets.EC2_IMAGE_ID }}
+          ec2-instance-type: t2.micro
+          subnet-id: ${{ secrets.SUBNET_ID }}
+          security-group-id: ${{ secrets.SECURITY_GROUP_ID }}
           aws-resource-tags: > 
             [
               {"Key": "Name", "Value": "ec2-github-runner-${{ github.workflow }}-${{ github.run_number }}-${{ github.run_attempt }}"},
@@ -71,7 +74,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: eu-central-1
       - name: Stop EC2 runner
         uses: machulav/ec2-github-runner@v2
         with:
