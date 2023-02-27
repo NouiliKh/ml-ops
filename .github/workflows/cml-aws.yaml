@@ -51,7 +51,7 @@ jobs:
 
       - name: install make
         run: |
-          sudo apt install make && sudo apt install build-essential
+          sudo apt -y install make && sudo apt -y install build-essential
           
 
       - name: install dependencies
