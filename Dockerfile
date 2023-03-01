@@ -23,4 +23,4 @@ ENV PYTHONPATH /app
 COPY src /app/src
 COPY main.py /app/main.py
 
-CMD ["python3", "src/main.py"]
+CMD ["python3", "main.py"]
