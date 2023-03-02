@@ -91,6 +91,7 @@ jobs:
 
   Docker-registry:
     name: Build into ECR
+    runs-on: ubuntu-latest
     needs:
       - deploy-runner
       - train
