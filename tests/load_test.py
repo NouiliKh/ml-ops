@@ -7,5 +7,5 @@ class QuickstartUser(HttpUser):
 
     @task
     def sum(self):
-        for _ in range(10):
+        for _ in range(100):
             get_sum(_, 3)
